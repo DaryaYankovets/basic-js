@@ -13,7 +13,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function deleteDigit(/* n */) {
   throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  let arrNum = [];
+  for (let i = 0; i < n.toString().length; i++) {
+    arrNum.push(+n.toString().split('').filter((ele, id) => id !== i).join(''));
+  }
+  return arrNum.sort((a , b) => b - a)[0];
 }
 
 module.exports = {
